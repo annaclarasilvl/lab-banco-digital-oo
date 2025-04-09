@@ -17,6 +17,10 @@ public abstract class Conta implements IConta {
 
 	@Override
 	public void sacar(double valor) {
+		if (valor > saldo) {
+			System.out.println("Saque não realizado. Saldo insuficiente.");
+			return;
+		}
 		saldo -= valor;
 	}
 

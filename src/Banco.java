@@ -1,9 +1,11 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Banco {
 
 	private String nome;
-	private List<Conta> contas;
+	private List<Conta> contas = new ArrayList<>();
+	Cliente cliente = new Cliente();
 
 	public String getNome() {
 		return nome;
@@ -17,8 +19,13 @@ public class Banco {
 		return contas;
 	}
 
-	public void setContas(List<Conta> contas) {
-		this.contas = contas;
+	public void inputConta(Conta c) {
+		contas.add(c);
 	}
 
+	public void mostrarContas() {
+		
+			System.out.println("Número de contas abertas no banco: " + contas.size());
+
+	}
 }
